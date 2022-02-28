@@ -3,4 +3,4 @@ in this challenge we wrote a function takes in 2 parameters array and value and 
 we used binary search in this challenge inisted of traditional sarech using for loop or map 
 
 ## Whiteboard Process
-![array-binary-search.JPG](array-binary-search.JPG)
+![Whiteboard Process](./array-binary-search.JPG)
