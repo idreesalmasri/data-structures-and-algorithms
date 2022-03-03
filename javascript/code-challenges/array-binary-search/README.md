@@ -4,3 +4,5 @@ we used binary search in this challenge inisted of traditional sarech using for 
 
 ## Whiteboard Process
 ![Whiteboard Process](./array-binary-search.JPG)
+
+i changed the image 
