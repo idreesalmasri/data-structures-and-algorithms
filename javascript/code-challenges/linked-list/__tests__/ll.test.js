@@ -82,6 +82,7 @@ describe('append to the end of the LL', () => {
         expect(ll.head.next.next.value).toEqual('c');
         expect(ll.head.next.next.next).toBeNull();
     })
+    
 });
 describe('insert before', () => {
     
@@ -115,5 +116,16 @@ describe('insert after', () => {
         expect(ll.head.next.next.next.value).toEqual('a');
         expect(ll.head.next.next.next.next).toBeNull();
     })
-    
+    it('insert after the last node in LL',()=>{
+        const ll = new LinkedList();
+        ll.insert('a');
+        ll.insert('b');
+        ll.insert('c');
+        ll.insertAfter('a','d');
+        expect(ll.head.value).toEqual('c');
+        expect(ll.head.next.value).toEqual('b');
+        expect(ll.head.next.next.value).toEqual('a');
+        expect(ll.head.next.next.next.value).toEqual('d');
+        expect(ll.head.next.next.next.next).toBeNull();
+    })
 })
