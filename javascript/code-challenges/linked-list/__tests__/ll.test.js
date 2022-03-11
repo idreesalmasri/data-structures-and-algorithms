@@ -63,3 +63,57 @@ describe("return a collection of all the values that exist in the linked list",(
 
     })
 })
+describe('append to the end of the LL', () => {
+    it('add to an empty LL', () => {
+        const ll = new LinkedList();
+        ll.append('a'); // create a new node (value=a)
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next).toBeNull();        
+
+    })
+    // 2. if the LL is NOT empty
+    it('add to a non-empty LL',()=>{
+        const ll = new LinkedList();
+        ll.append('a');
+        ll.append('b');
+        ll.append('c');
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next.value).toEqual('b');
+        expect(ll.head.next.next.value).toEqual('c');
+        expect(ll.head.next.next.next).toBeNull();
+    })
+});
+describe('insert before', () => {
+    
+    // 2. if the LL is NOT empty
+    it('insert before to a non-empty LL',()=>{
+        const ll = new LinkedList();
+        ll.insert('a');
+        ll.insert('b');
+        ll.insert('c');
+        ll.insertBefore('b','d');
+        expect(ll.head.value).toEqual('c');
+        expect(ll.head.next.value).toEqual('d');
+        expect(ll.head.next.next.value).toEqual('b');
+        expect(ll.head.next.next.next.value).toEqual('a');
+        expect(ll.head.next.next.next.next).toBeNull();
+    })
+    
+})
+describe('insert after', () => {
+    
+    // 2. if the LL is NOT empty
+    it('insert after to a non-empty LL',()=>{
+        const ll = new LinkedList();
+        ll.insert('a');
+        ll.insert('b');
+        ll.insert('c');
+        ll.insertAfter('b','d');
+        expect(ll.head.value).toEqual('c');
+        expect(ll.head.next.value).toEqual('b');
+        expect(ll.head.next.next.value).toEqual('d');
+        expect(ll.head.next.next.next.value).toEqual('a');
+        expect(ll.head.next.next.next.next).toBeNull();
+    })
+    
+})
