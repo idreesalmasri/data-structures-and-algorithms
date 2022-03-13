@@ -129,3 +129,20 @@ describe('insert after', () => {
         expect(ll.head.next.next.next.next).toBeNull();
     })
 })
+describe("return k-th from the end",()=>{
+    it('return k-th from the end',()=>{
+        const ll = new LinkedList();
+        ll.insert('a');
+        ll.insert('b');
+        ll.insert('c');
+        ll.insert('d');
+        ll.insert('e');
+        ll.insert('f');
+        //head->[f]->[e]->[d]->[c]->[b]->[a]->null
+        expect(ll.kthFromEnd(2)).toEqual('c');
+        expect(ll.kthFromEnd(1)).toEqual('b');
+        expect(ll.kthFromEnd(0)).toEqual('a');
+        expect(ll.kthFromEnd(10)).toEqual('Exception');
+        expect(ll.kthFromEnd(-1)).toEqual('Exception');
+    })
+})
