@@ -29,3 +29,25 @@ insert after :create LL method takes 2 params existed value and new value and wa
 in this challenge 06
 write linkedlist method take k as input and return and Return the node’s value that is k places from the tail of the linked list.
 ![k-th from end ](./linked-list-kth.JPG)
+
+================
+code challenge 10
+## challenge
+in this challenge learned Queue implementation using linked list and stack implementation using linked list in javascript
+
+## Approach & Efficiency
+in all methode i write for both stack and queue its o(1) time complexity
+
+## API
+the methodes 
+stack methodes :
+push : its push  new value to the stack 
+pop : its pop the last value in the stack
+isEmpty: return true if the stack is impty or fale if the stack is not empty
+peek: its return the top value of the stak 
+
+queue methodes :
+enqueue: its insert a new node in th rear of the queue 
+decueue: its pop node from the front of the queue 
+peek: its return the first node in the queue 
+isEmpty : its return true when the queue is empty and false when the queue is not empty 

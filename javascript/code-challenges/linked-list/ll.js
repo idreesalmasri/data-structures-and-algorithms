@@ -32,7 +32,7 @@ class LinkedList {
         let string="";
         let current = this.head;
         while(current != null){
-            str="{"+current.value+"}->"+str;
+            str=str+"{"+current.value+"}->";
             current = current.next;
         }
         string=str+"NULL";
@@ -101,6 +101,18 @@ class LinkedList {
             currentNode2 = currentNode2.next;
         }
         return currentNode2.value;
+    }
+    revers(){
+        let curr=this.head;
+        let prevNode=null;
+        let nextnode=null;
+        while(curr!=null){
+            nextnode=curr.next;
+            curr.next=prevNode;
+            prevNode=curr;
+            curr=nextnode;
+        }
+        return prevNode;
     }
 }
 module.exports = LinkedList;
