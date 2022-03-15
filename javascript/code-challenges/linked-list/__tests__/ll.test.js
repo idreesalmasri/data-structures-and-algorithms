@@ -56,9 +56,9 @@ describe("test if given value exisit in ll",()=>{
 describe("return a collection of all the values that exist in the linked list",()=>{
     it('return a collection of all the values that exist in the linked lis',()=>{
         const ll = new LinkedList();
-        ll.insert('a');
-        ll.insert('b');
         ll.insert('c');
+        ll.insert('b');
+        ll.insert('a');
         expect(ll.toString()).toEqual("{a}->{b}->{c}->NULL");
 
     })
