@@ -84,6 +84,32 @@ class LinkedList {
             }
         }
     }
+    zipLists(list1, list2){
+        //The strategy here uses a temporary dummy node as the start of the result list. The pointer tail always points to the last node in the result list, so appending new nodes is easy. The dummy node gives tail something to point to initially when the result list is empty.
+        let dummy=new Node();
+        let tail=dummy;
+        let currA=list1.head;
+        let currB=list2.head;
+        while(currA||currB){
+            if(currA==null){
+                tail.next=currB;
+            }else if(currB==null){
+                tail.next=currA;
+            }else{
+                tail.next=currA;
+                tail=currA;
+                currA=currA.next;
+
+                tail.next=currB;
+                tail=currB;
+                currB=currB.next
+            }
+        }
+        const result=new LinkedList();
+        result.head=dummy.next;
+        return result;
+    }
+
     kthFromEnd(k){
         let currentNode = this.head;
         

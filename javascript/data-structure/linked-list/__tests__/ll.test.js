@@ -129,6 +129,23 @@ describe('insert after', () => {
         expect(ll.head.next.next.next.next).toBeNull();
     })
 })
+describe('testing zib two linked list',()=>{
+    it('test',()=>{
+        const list1=new LinkedList();
+        //a->b->c
+        list1.insert('c');
+        list1.insert('b');
+        list1.insert('a');
+        const list2=new LinkedList();
+        //x->y->z->
+        list2.insert('z');
+        list2.insert('y');
+        list2.insert('x');
+        const ll=new LinkedList();
+        
+        expect(ll.zipLists(list1,list2).toString()).toEqual("{a}->{x}->{b}->{y}->{c}->{z}->NULL");
+    })
+})
 describe("return k-th from the end",()=>{
     it('return k-th from the end',()=>{
         const ll = new LinkedList();

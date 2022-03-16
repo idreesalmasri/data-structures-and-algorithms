@@ -25,6 +25,10 @@ insert before
 ![insertBefore](./insertBefore.JPG)
 insert after :create LL method takes 2 params existed value and new value and want to insert the new value after the existed value<br>
 ![insertafter](./insertAfter.JPG)
+================<br>
+challenge 08  
+this challenge about  write function takes in two linked list as input and return new zipped linkedlist  
+![zip](./zip.JPG)
 ==============
 in this challenge 06
 write linkedlist method take k as input and return and Return the node’s value that is k places from the tail of the linked list.
