@@ -56,9 +56,9 @@ describe("test if given value exisit in ll",()=>{
 describe("return a collection of all the values that exist in the linked list",()=>{
     it('return a collection of all the values that exist in the linked lis',()=>{
         const ll = new LinkedList();
-        ll.insert('a');
-        ll.insert('b');
         ll.insert('c');
+        ll.insert('b');
+        ll.insert('a');
         expect(ll.toString()).toEqual("{a}->{b}->{c}->NULL");
 
     })
@@ -144,5 +144,22 @@ describe('testing zib two linked list',()=>{
         const ll=new LinkedList();
         
         expect(ll.zipLists(list1,list2).toString()).toEqual("{a}->{x}->{b}->{y}->{c}->{z}->NULL");
+    })
+})
+describe("return k-th from the end",()=>{
+    it('return k-th from the end',()=>{
+        const ll = new LinkedList();
+        ll.insert('a');
+        ll.insert('b');
+        ll.insert('c');
+        ll.insert('d');
+        ll.insert('e');
+        ll.insert('f');
+        //head->[f]->[e]->[d]->[c]->[b]->[a]->null
+        expect(ll.kthFromEnd(2)).toEqual('c');
+        expect(ll.kthFromEnd(1)).toEqual('b');
+        expect(ll.kthFromEnd(0)).toEqual('a');
+        expect(ll.kthFromEnd(10)).toEqual('Exception');
+        expect(ll.kthFromEnd(-1)).toEqual('Exception');
     })
 })

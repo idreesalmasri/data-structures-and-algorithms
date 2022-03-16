@@ -110,5 +110,35 @@ class LinkedList {
         return result;
     }
 
+    kthFromEnd(k){
+        let currentNode = this.head;
+        
+        let len=0;
+        while(currentNode!=null){
+            currentNode = currentNode.next;
+            len++;
+        }
+        if(k>len||k<0){
+            let str="Exception";
+            return str;
+        }
+        let currentNode2 = this.head;
+        for(let i=0;i<len-k-1;i++){
+            currentNode2 = currentNode2.next;
+        }
+        return currentNode2.value;
+    }
+    revers(){
+        let curr=this.head;
+        let prevNode=null;
+        let nextnode=null;
+        while(curr!=null){
+            nextnode=curr.next;
+            curr.next=prevNode;
+            prevNode=curr;
+            curr=nextnode;
+        }
+        return prevNode;
+    }
 }
 module.exports = LinkedList;
