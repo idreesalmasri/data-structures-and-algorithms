@@ -30,7 +30,7 @@ class Queue {
         
     }
     peek(){
-        if(this.first==null){
+        if(this.first===null){
             console.log("exeption");
             return "exeption";
         }else{
@@ -39,7 +39,7 @@ class Queue {
         }
     }
     isEmpty(){
-        if(thisfirst==null){
+        if(this.first===null){
             console.log(true);
             return true;
         }else{
