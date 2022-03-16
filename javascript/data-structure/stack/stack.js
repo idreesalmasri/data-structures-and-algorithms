@@ -20,7 +20,7 @@ class Stack {
         console.log(this.top);
     }
     pop() {
-        if (this.top == null) {
+        if (this.top === null) {
             console.log("exeption");
             return "exeption";
             
@@ -32,7 +32,7 @@ class Stack {
         }
     }
     peek(){
-        if(this.top==null){
+        if(this.top===null){
             console.log("exeption");
             return "exeption";
         }else{
@@ -41,7 +41,7 @@ class Stack {
         }
     }
     isEmpty(){
-        if(this.top==null){
+        if(this.top===null){
             console.log(true);
             return true;
         }else{
