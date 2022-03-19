@@ -6,13 +6,7 @@ const PseudoQueue = require('../pseudoQueue');
 
 
 describe('', () => {
-    it('test the new create of pesudoQueueForTest', () => {
-        const queue = new PseudoQueue();
-        expect(queue).toBeInstanceOf(PseudoQueue);
-
-    })
-    })
-
+ 
   it('add to queue', () => {
     const queue = new PseudoQueue();
     queue.enqueue(10);
