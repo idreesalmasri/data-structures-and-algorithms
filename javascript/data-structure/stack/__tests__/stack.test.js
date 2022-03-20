@@ -21,9 +21,10 @@ describe("testing stack ",()=>{
         newStack.push(1);
         newStack.push(2);
         newStack.push(3);
-        expect(newStack.pop().value).toEqual(2);
-        expect(newStack.pop().value).toEqual(1);
-        expect(newStack.pop()).toBe(null);
+        expect(newStack.pop()).toEqual(3);
+        expect(newStack.pop()).toEqual(2);
+        expect(newStack.pop()).toEqual(1);
+        expect(newStack.pop()).toBe('exeption');
     });
     it('testing successfully peek the next item and return exeption when the stack is empty',()=>{
         let newStack = new Stack();
