@@ -17,35 +17,42 @@ class Stack {
             node.next = this.top;
             this.top = node;
         }
-        console.log(this.top);
+        // console.log(this.top);
     }
     pop() {
         if (this.top === null) {
-            console.log("exeption");
+            // console.log("exeption");
             return "exeption";
             
         } else {
-            const newTop = this.top.next;
-            this.top = newTop;
-            console.log(this.top);
-            return this.top;
+            let current = this.top
+            this.top = current.next
+            current.next = null
+            return current.value
+
+            // const newTop = this.top.next;
+            // this.top.next=null;
+            // this.top = newTop;
+
+            // // console.log(this.top);
+            // return this.top;
         }
     }
     peek(){
         if(this.top===null){
-            console.log("exeption");
+            // console.log("exeption");
             return "exeption";
         }else{
-            console.log(this.top);
+            // console.log(this.top);
             return this.top;
         }
     }
     isEmpty(){
         if(this.top===null){
-            console.log(true);
+            // console.log(true);
             return true;
         }else{
-            console.log(false);
+            // console.log(false);
             return false;
         } 
     }
