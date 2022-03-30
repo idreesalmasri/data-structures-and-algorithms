@@ -66,6 +66,10 @@ describe('Binary Tree', ()=>{
         // console.log("postOrder output ---->", postOrder);
         expect(postOrder).toEqual(expectedOutput);
     });
+    it(' the maximum value stored in the tree', () => {
+         expect(tree.max()).toEqual(9);
+    });
+
 
 });
 

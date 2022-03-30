@@ -1,17 +1,17 @@
 'use strict'
-const Node=require("./node.class")
+const Node = require("./node.class")
 class BinaryTree {
-    constructor(root=null){
-        this.root=root;
+    constructor(root = null) {
+        this.root = root;
     }
 
-     // Pre-order >> root - left - right
-    preOrder(){
-        let result=[];
-        let traverse=(node)=>{
+    // Pre-order >> root - left - right
+    preOrder() {
+        let result = [];
+        let traverse = (node) => {
             result.push(node.value);
-            if(node.left) traverse(node.left);
-            if(node.right) traverse(node.right);
+            if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
         }
         traverse(this.root);
         return result;
@@ -19,8 +19,8 @@ class BinaryTree {
 
 
     // In-Order >> left - root - right
-    inOrder(){
-        let result=[];
+    inOrder() {
+        let result = [];
         let traverse = (node) => {
             if (node.left) traverse(node.left);
             result.push(node.value);
@@ -41,11 +41,11 @@ class BinaryTree {
         traverse(this.root);
         return result;
     }
-    add(value){
-      let  newNode=new Node(value);
-        if(this.root === null){
-        this.root = newNode;
-        }else{
+    add(value) {
+        let newNode = new Node(value);
+        if (this.root === null) {
+            this.root = newNode;
+        } else {
             this.insertNode(this.root, newNode);
 
         }
@@ -70,26 +70,38 @@ class BinaryTree {
                 node.right = newNode;
             }
 
-            else { 
-                this.insertNode(node.right, newNode); 
+            else {
+                this.insertNode(node.right, newNode);
             }
 
         }
     }
     contains(value) {
         let current = this.root;
-        
+
         while (current) {
             // console.log("rrrrrrrr",current.value);
-           if (value == current.value) {
-              return true;
-           };
-           current = value < current.value ? current.left : current.right;
+            if (value == current.value) {
+                return true;
+            };
+            current = value < current.value ? current.left : current.right;
         }
-        
+
         return false;
-     };
+    };
+
+    max(){
+        let arr=this.preOrder();
+        let max=0;
+        arr.map(ele=>{
+            if(ele>max){
+                max=ele;
+            }
+        })
+        return max;
+    }
 
 }
+
 
 module.exports = BinaryTree;
