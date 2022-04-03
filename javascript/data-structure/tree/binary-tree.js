@@ -41,6 +41,25 @@ class BinaryTree {
         traverse(this.root);
         return result;
     }
+   
+
+    max(){
+        let arr=this.preOrder();
+        let max=0;
+        arr.map(ele=>{
+            if(ele>max){
+                max=ele;
+            }
+        })
+        return max;
+    }
+
+}
+
+class BinarySearch extends BinaryTree{
+    constructor(root=null){
+        super();
+    }
     add(value) {
         let newNode = new Node(value);
         if (this.root === null) {
@@ -89,19 +108,10 @@ class BinaryTree {
 
         return false;
     };
-
-    max(){
-        let arr=this.preOrder();
-        let max=0;
-        arr.map(ele=>{
-            if(ele>max){
-                max=ele;
-            }
-        })
-        return max;
-    }
-
 }
 
 
-module.exports = BinaryTree;
+module.exports={
+    BinaryTree : BinaryTree,
+    BinarySearch : BinarySearch
+};

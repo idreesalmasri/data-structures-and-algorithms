@@ -1,7 +1,8 @@
 'use strict';
 
-const { describe, it } = require('eslint/lib/rule-tester/rule-tester');
-const BinaryTree = require('../binary-tree');
+
+const {BinaryTree} = require('../binary-tree');
+const {BinarySearch}=require("../binary-tree")
 const Node = require('../node.class');
 let tree = null;
 
@@ -73,52 +74,36 @@ describe('Binary Tree', ()=>{
 
 });
 
-describe("binary search",()=>{
-    it("add test",()=>{
-        let one = new Node(30);
-        let two = new Node(20);
-        
-        let four = new Node(40);
-        let five = new Node(10);
-        let six = new Node(25);
-        
-        let eight = new Node(50);
-        
-        one.left = two;
-        one.right = four;
-        two.right = six;
-        two.left=five;
-       four.right=eight;
-      let tree = new BinaryTree(one);
-      tree.add(35);
-      let result=[30,20,10,25,40,35,50];
-      expect(tree.preOrder()).toEqual(result)
-      tree.add(5);
-      let result2=[30,20,10,5,25,40,35,50]
-      expect(tree.preOrder()).toEqual(result2);
-    
-    })
-    it("contains test test",()=>{
-        let one = new Node(30);
-        let two = new Node(20);
-        
-        let four = new Node(40);
-        let five = new Node(10);
-        let six = new Node(25);
-        
-        let eight = new Node(50);
-        
-        one.left = two;
-        one.right = four;
-        two.right = six;
-        two.left=five;
-       four.right=eight;
-      let tree = new BinaryTree(one);
-      
-      expect(tree.contains(45)).toBe(false);
-      expect(tree.contains(15)).toBe(false); 
 
-      expect(tree.contains(10)).toEqual(true);
-      expect(tree.contains(50)).toEqual(true);
-    })
+describe('testing Binary search tree',()=>{
+    let tree=null;
+    beforeAll( ()=>{
+
+     tree = new BinarySearch();
+     tree.add(100);
+     tree.add(60);
+     tree.add(150);
+     tree.add(50);
+     tree.add(80);
+     tree.add(140);
+     tree.add(160);
+  
+
+ }
+ )
+ it('testing the root value',()=>{
+     expect(tree.root.value).toEqual(100)
+ })
+ it('testing the preOrder method',()=>{
+     let output = [100,60,50,80,150,140,160];
+     expect(tree.preOrder()).toEqual(output)
+
+ })
+
+  
+ it('testing the contains method',()=>{
+     expect(tree.contains(160)).toBe(true);
+     expect(tree.contains(90)).toBe(false);
+
+ })
 })
