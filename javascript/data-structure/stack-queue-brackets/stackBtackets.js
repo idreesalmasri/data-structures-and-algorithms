@@ -1,34 +1,6 @@
 'use strict';
 
-// class Stack {
-//     constructor() {
-//         this.storage = [];
-//         this.top = null;
-//     }
 
-//     push(item) {
-//         this.storage.push(item);
-//         this.top=item;
-//     }
-
-//     peek(){
-//         return this.top;
-//     }
-//     isEmpty(){
-//         if(this.top===null){
-//             // console.log(true);
-//             return true;
-//         }else{
-//             // console.log(false);
-//             return false;
-//         } 
-//     }
-//     pop() {
-//         let poppedItem = this.storage.pop();
-//         this.top = this.storage[this.storage.length-1];
-//         return poppedItem;
-//     }
-// }
 function validateBrackets(str){
     var depth = 0;
     // for each char in the string : 2 cases
