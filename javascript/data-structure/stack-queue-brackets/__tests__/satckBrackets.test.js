@@ -1,6 +1,6 @@
-const { describe, it } = require("eslint/lib/rule-tester/rule-tester");
-const {stack}=require("../stack");
-const {validateBrackets}=require("../stack");
+
+const {stack}=require("../stackBtackets");
+const {validateBrackets}=require("../stackBtackets")
 
 describe("test",()=>{
     it("test true",()=>{
@@ -16,7 +16,7 @@ describe("test",()=>{
         expect(validateBrackets(str)).toBe(false);
     })
     it("test false ",()=>{
-        let str="{(})";
+        let str="(](";
         expect(validateBrackets(str)).toBe(false);
     })
 })
