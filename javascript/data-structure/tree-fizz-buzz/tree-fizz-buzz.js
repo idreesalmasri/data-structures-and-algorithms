@@ -1,25 +1,39 @@
 "use strict";
-class k_ary_tree {
+const Node = require('./node')
+class fizz_buzz {
     constructor(root = null) {
         this.root = root;
     }
     tree_fizz_buzz() {
         if (!this.root) return;
-        let queue = [this.root]
-        let output = [];
-        while (queue.length) {
-            // let size = queue.length;
-            output.push(queue.map(node => node.value))
-            while (queue.length>0) {
-                let node = queue.shift()
-                for (let child of node.children) {
-                    queue.push(child)
-                    output.push(child.value)
-                }
+        let queue = [this.root];
+        
+        let child = []
+        while (queue.length > 0) {
+            let node = queue.shift()
+            
+
+            if (node.value % 5 == 0 && node.value % 3 == 0) {
+                child.push('fizzbuzz')
+            } else if (node.value % 3 == 0) {
+                child.push('fizz')
+            } else if (node.value % 5 == 0) {
+                child.push('buzz')
+            } else {
+                child.push(node.value.toString())
             }
 
+            node.children.map(node => {
+                queue.push(node)
+            })
+            
+
         }
-        return output
+
+        return  child ;
     }
+
 }
-module.exports=k_ary_tree;
+
+module.exports =fizz_buzz;
+
