@@ -1,5 +1,6 @@
 'use strict'
 const Node = require("./node.class")
+
 class BinaryTree {
     constructor(root = null) {
         this.root = root;
@@ -53,6 +54,23 @@ class BinaryTree {
         })
         return max;
     }
+    breadthFirst() {
+        if (!this.root) return;
+        let queue = [this.root];
+        let output = []
+
+        while (queue.length > 0) {
+            let node = queue.shift()
+            if (node.left) {
+                queue.push(node.left)
+            }
+            if (node.right) {
+                queue.push(node.right)
+            }
+            output.push(node.value)
+        }
+        return output;
+      }
 
 }
 
