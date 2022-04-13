@@ -1,6 +1,7 @@
 'use strict';
 
 
+const { describe } = require('eslint/lib/rule-tester/rule-tester');
 const {BinaryTree} = require('../binary-tree');
 const {BinarySearch}=require("../binary-tree")
 const Node = require('../node.class');
@@ -106,4 +107,33 @@ describe('testing Binary search tree',()=>{
      expect(tree.contains(90)).toBe(false);
 
  })
+ 
+})
+describe("tree-breadth-first",()=>{
+    beforeAll( ()=>{
+        const node1 = new Node(1);
+        const node2 = new Node(2);
+        const node3 = new Node(3);
+        const node4 = new Node(4);
+        const node5 = new Node(5);
+        node1.left = node2;
+        node1.right = node3;
+        node2.left = node4;
+        node2.right = node5;
+       let testTree = new BinaryTree(node1);
+    })
+    it('breadth first', () => {
+        let node1 = new Node(1);
+        let tree3 = new BinaryTree(node1);
+        let node2 = new Node(2);
+        node1.left=node2;
+        let node3 = new Node(3);
+        node1.right=node3;
+        let node4 = new Node(4);
+        node2.left=node4;
+        let arr = [1, 2, 3, 4];
+        let newRR=tree3.breadthFirst();
+        console.log(newRR);
+        expect(newRR).toEqual(arr);
+      });
 })
