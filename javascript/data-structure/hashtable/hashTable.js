@@ -33,6 +33,7 @@ class HashTable{
         }
         this.map[hashedKey].append(entryData);
     }
+   
     get(key){
         let hashedKey=this.hash(key);
         let current= this.map[hashedKey].head;
@@ -47,7 +48,10 @@ class HashTable{
     }
     contains(key){
         let hashedKey=this.hash(key);
-        let current= this.map[hashedKey].head;
+        if (this.map[hashedKey]){
+            let current= this.map[hashedKey].head;
+        
+        
         while(current){
 
             if(current.value[key]){
@@ -57,6 +61,8 @@ class HashTable{
         }
         return false; 
     }
+    }
+    // ==============
     
     keys(){
         let keysArray=[];
@@ -74,6 +80,10 @@ class HashTable{
     }
 }
 module.exports=HashTable;
+
+
+
+// repeatedWord("hello welcome hello to the world");
 // const hashmap01 = new HashTable(3);
 // hashmap01.set('Razan','Instructor');
 // hashmap01.set('qqqq','Instructor');
