@@ -32,12 +32,14 @@ class LinkedList {
         let string="";
         let current = this.head;
         while(current != null){
-            str=str+"{"+current.value+"}->";
+            // str=str+"{"+current.value+"}->";
+            str+=`{${current.value}}${current.next? "->":"-> null"}`
             current = current.next;
         }
-        string=str+"NULL";
-        return string;
+        return str;
+        
     }
+  
     append(value) {
         const node = new Node(value);
         if(!this.head) { 
@@ -140,5 +142,95 @@ class LinkedList {
         }
         return prevNode;
     }
+    insertAt(val,position){
+        let node=new Node(val);
+        let index=0;
+        let curr=this.head;
+        let prev;
+        if (position<0){
+            return "exception";
+            
+        }
+        while(curr){
+            // console.log(curr);
+            if(index===position){
+                node.next=curr;
+                prev.next=node;
+                
+                return;
+            }else{
+                index=index+1;
+                // console.log(index);
+                prev=curr;
+                curr=curr.next;
+            }
+        }
+        
+        return "exxeption"; 
+    }
+    removeAt(position){
+        let curr=this.head;
+        let prev;
+        let index=0;
+        if(position===0){
+            this.head=curr.next;
+            curr.next=null;
+            console.log(curr);
+            return curr;
+        }
+        while(curr){
+            if(index===position){
+                
+                prev.next=curr.next;
+                curr.next=null;
+                
+                console.log(curr);
+                return curr;
+            }else{
+                index=index+1;
+                
+                prev=curr;
+                curr=curr.next;
+                
+            }
+        }
+        console.log("exception");
+        return "exception";
+    }
+    removeElement(val){
+        let curr=this.head;
+        let prev;
+        if(val===this.head.value){
+        this.head=curr.next;
+        curr.next=null;
+        console.log(curr);
+        return curr;
+        }
+        while(curr){
+            if(curr.value===val){
+                prev.next=curr.next;
+                curr.next=null;
+                console.log(curr);
+                return curr;
+            }else{
+                prev=curr;
+                curr=curr.next;
+            }
+        }
+        console.log("exception");
+        return "exception"
+    }
 }
 module.exports = LinkedList;
+// const link=new LinkedList();
+// link.append("a");
+// link.append("b");
+// link.append("c");
+// link.append("d");
+// link.append("e");
+// // console.log(link.toString());
+// // link.insertAt("H",2);
+// console.log(link.toString());
+
+// link.removeElement("d");
+// console.log(link.toString());
