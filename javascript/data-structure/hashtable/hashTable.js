@@ -36,6 +36,7 @@ class HashTable{
    
     get(key){
         let hashedKey=this.hash(key);
+        if (this.map[hashedKey]){
         let current= this.map[hashedKey].head;
         while(current){
 
@@ -44,7 +45,9 @@ class HashTable{
             }
             current=current.next;
         }
+    }
         return null;
+    
     }
     contains(key){
         let hashedKey=this.hash(key);
