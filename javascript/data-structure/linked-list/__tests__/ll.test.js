@@ -133,14 +133,14 @@ describe('testing zib two linked list',()=>{
     it('test',()=>{
         const list1=new LinkedList();
         //a->b->c
-        list1.insert('c');
-        list1.insert('b');
-        list1.insert('a');
+        list1.insert('3');
+        list1.insert('7');
+        list1.insert('1');
         const list2=new LinkedList();
         //x->y->z->
-        list2.insert('z');
-        list2.insert('y');
-        list2.insert('x');
+        list2.insert('7');
+        list2.insert('4');
+        list2.insert('2');
         const ll=new LinkedList();
         
         expect(ll.zipLists(list1,list2).toString()).toEqual("{a}->{x}->{b}->{y}->{c}->{z}->NULL");
