@@ -64,4 +64,30 @@ describe("test the graph methods",()=>{
         myGraph.addVertex(vertexE)
         expect(myGraph.getSize()).toEqual(5);
     })
+    
+    it("graph-breadth-first return A collection of nodes in the order they were visited",()=>{
+        
+        const myGraph=new Graph();
+        let vertexA=new Vertex("a")
+        let vertexB=new Vertex("b")
+        let vertexC=new Vertex("c")
+        let vertexD=new Vertex("d")
+        let vertexE=new Vertex("e")
+        let vertexF=new Vertex("f")
+        let vertexG=new Vertex("g")
+        myGraph.addVertex(vertexA);
+        myGraph.addVertex(vertexB)
+        myGraph.addVertex(vertexC)
+        myGraph.addVertex(vertexD)
+        myGraph.addVertex(vertexE)
+        myGraph.addVertex(vertexF)
+        myGraph.addVertex(vertexG)
+        myGraph.addEdge(vertexA,vertexC)
+        myGraph.addEdge(vertexA,vertexB)
+        myGraph.addEdge(vertexA,vertexD)
+        myGraph.addEdge(vertexD,vertexE)
+        myGraph.addEdge(vertexE,vertexF)
+        myGraph.addEdge(vertexB,vertexG)
+        expect(myGraph.breadthFirst(vertexA)).toEqual(["a","c","b","d","g","e","f"])
+    })
 })
