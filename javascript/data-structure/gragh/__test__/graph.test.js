@@ -12,11 +12,13 @@ describe("test the graph methods",()=>{
     })
     it("An edge can be successfully added to the graph",()=>{
         const myGraph=new Graph();
-        myGraph.addVertex("a");
-        myGraph.addVertex("b");
-        expect(myGraph.getNeighbors("a")).toEqual([])
-        myGraph.addEdge("a","b",5)
-        expect(myGraph.getNeighbors("a")).toEqual([{vertex:"b",weight:5}])
+        let VertexA=new Vertex("a");
+        let VertexB=new Vertex("b")
+        myGraph.addVertex(VertexA);
+        myGraph.addVertex(VertexB);
+        expect(myGraph.getNeighbors(VertexA)).toEqual([])
+        myGraph.addEdge(VertexA,VertexB,5)
+        expect(myGraph.getNeighbors(VertexA)).toEqual([{ vertex: { value: 'b' }, weight: 5 }])
     })
     it("A collection of all nodes can be properly retrieved from the graph",()=>{
         
@@ -36,13 +38,16 @@ describe("test the graph methods",()=>{
     it("All appropriate neighbors can be retrieved from the graph, Neighbors are returned with the weight between nodes included",()=>{
         
         const myGraph=new Graph();
-        myGraph.addVertex("a");
-        myGraph.addVertex("b");
-        myGraph.addVertex("c");
-        expect(myGraph.getNeighbors("a")).toEqual([])
-        myGraph.addEdge("a","b",5)
-        myGraph.addEdge("a","c",5)
-        expect(myGraph.getNeighbors("a")).toEqual([{vertex:"b",weight:5},{vertex:"c",weight:5}])
+        let VertexA=new Vertex("a");
+        let VertexB=new Vertex("b")
+        let VertexC=new Vertex("c")
+        myGraph.addVertex(VertexA);
+        myGraph.addVertex(VertexB);
+        myGraph.addVertex(VertexC);
+        expect(myGraph.getNeighbors(VertexA)).toEqual([])
+        myGraph.addEdge(VertexA,VertexB,5)
+        myGraph.addEdge(VertexA,VertexC,5)
+        expect(myGraph.getNeighbors(VertexA)).toEqual([{ vertex: { value: 'b' }, weight: 5 },{ vertex: { value: 'c' }, weight: 5 }])
     })
     it("The proper size is returned, representing the number of nodes in the grap",()=>{
         
