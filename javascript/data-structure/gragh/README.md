@@ -24,5 +24,11 @@ Include the weight of the connection in the returned collection
 Arguments: none  
 Returns the total number of nodes in the graph  
 ## Approach & Efficiency
+- add_node:without  any loops so  
+big o of time : o(1)  
+big o of space : o(1) 
+- add_edge:big o of time and space BigO(1)  
+- get_nodes: big o of time and space BigO(1)
+- size:i big o of time and space BigO(1)
 
 
