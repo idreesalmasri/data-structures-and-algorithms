@@ -9,7 +9,9 @@ class Graph {
     }
 
     addVertex(vertex) {
+        
         this.adjacenctList.set(vertex, []);
+        return vertex;
     }
 
     addEdge(start, end, weight) {
@@ -31,23 +33,30 @@ class Graph {
     getNeighbors(vertex) {
         if (!this.adjacenctList.has(vertex)) {
             console.log('node does not exist');
-            return;
+            return ;
         }
         return this.adjacenctList.get(vertex)
     }
 
    
     getSize() {
-        return this.list.size > 0 ? this.list.size : null;
+        return this.adjacenctList.size > 0 ? this.adjacenctList.size : null;
     }
 
     getNodes() {
         let result = [];
-        for (const [vertex, edge] of this.list.entries()) {
-            result.push(vertex);
+        for (const [vertex, edge] of this.adjacenctList.entries()) {
+            result.push(vertex.value);
         }
         return result;
     }
     
 }
-
+module.exports=Graph;
+const myGraph=new Graph();
+        myGraph.addVertex("a");
+        myGraph.addVertex("b");
+        // console.log(myGraph);
+        // console.log(myGraph.getNeighbors("a"));
+        myGraph.addEdge("a","b",5)
+        console.log(myGraph.getNeighbors("a"));
