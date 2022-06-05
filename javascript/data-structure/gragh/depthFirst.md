@@ -14,3 +14,7 @@ Write the following method for the Graph class:
 big O:
 time :o(n)
 space:o(n)
+
+## Solution
+### whiteboard image
+![whiteboard](./graph-depth-first.PNG)
