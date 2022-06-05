@@ -91,3 +91,38 @@ describe("test the graph methods",()=>{
         expect(myGraph.breadthFirst(vertexA)).toEqual(["a","c","b","d","g","e","f"])
     })
 })
+describe("Graph", () => {
+    it("Depth First", () => {
+      let test = new Graph();
+  
+      let one = new Vertex("A");
+      let two = new Vertex("B");
+      let three = new Vertex("C");
+      let four = new Vertex("D");
+      let five = new Vertex("E");
+      let six = new Vertex("F");
+      let seven = new Vertex("G");
+      let eight = new Vertex("H");
+  
+      test.addVertex(one);
+      test.addVertex(two);
+      test.addVertex(three);
+      test.addVertex(four);
+      test.addVertex(five);
+      test.addVertex(six);
+      test.addVertex(seven);
+      test.addVertex(eight);
+  
+      test.addEdge(one, two);
+      test.addEdge(one, four);
+      test.addEdge(two, three);
+      test.addEdge(two, four);
+      test.addEdge(three, seven);
+      test.addEdge(four, five);
+      test.addEdge(four, eight);
+      test.addEdge(four, six);
+      test.addEdge(six, eight);
+      expect(test.depthFirst(one)).toEqual("A,B,C,G,D,E,H,F,");
+    });
+  });
+  
