@@ -74,28 +74,48 @@ class Graph {
         }
             return result;
     }
+    depthFirst(node){
+        const visitedNode=new Set();
+        visitedNode.add(node);
+    
+        const travers=(current,visited)=>{
+          visitedNode.add(current);
+          const neighbors=this.getNeighbors(current);
+          for (const neighbor of neighbors) {
+            if (!visited.has(neighbor.vertex)) {
+              travers(neighbor.vertex,visited);
+            }
+          }
+        }
+        travers(node,visitedNode);
+        let result='';
+        for (const iterator of visitedNode) {
+          result+=iterator.value+",";
+        }
+        return result;
+      }
     
 }
 module.exports=Graph;
-const myGraph=new Graph();
-let vertexA=new Vertex("a")
-let vertexB=new Vertex("b")
-let vertexC=new Vertex("c")
-let vertexD=new Vertex("d")
-let vertexE=new Vertex("e")
-let vertexF=new Vertex("f")
-let vertexG=new Vertex("g")
-myGraph.addVertex(vertexA);
-myGraph.addVertex(vertexB)
-myGraph.addVertex(vertexC)
-myGraph.addVertex(vertexD)
-myGraph.addVertex(vertexE)
-myGraph.addVertex(vertexF)
-myGraph.addVertex(vertexG)
-myGraph.addEdge(vertexA,vertexC,5)
-myGraph.addEdge(vertexA,vertexB,5)
-myGraph.addEdge(vertexA,vertexD,5)
-myGraph.addEdge(vertexD,vertexE,5)
-myGraph.addEdge(vertexE,vertexF,5)
-myGraph.addEdge(vertexB,vertexG,5)
-myGraph.breadthFirst(vertexA);
+// const myGraph=new Graph();
+// let vertexA=new Vertex("a")
+// let vertexB=new Vertex("b")
+// let vertexC=new Vertex("c")
+// let vertexD=new Vertex("d")
+// let vertexE=new Vertex("e")
+// let vertexF=new Vertex("f")
+// let vertexG=new Vertex("g")
+// myGraph.addVertex(vertexA);
+// myGraph.addVertex(vertexB)
+// myGraph.addVertex(vertexC)
+// myGraph.addVertex(vertexD)
+// myGraph.addVertex(vertexE)
+// myGraph.addVertex(vertexF)
+// myGraph.addVertex(vertexG)
+// myGraph.addEdge(vertexA,vertexC,5)
+// myGraph.addEdge(vertexA,vertexB,5)
+// myGraph.addEdge(vertexA,vertexD,5)
+// myGraph.addEdge(vertexD,vertexE,5)
+// myGraph.addEdge(vertexE,vertexF,5)
+// myGraph.addEdge(vertexB,vertexG,5)
+// myGraph.breadthFirst(vertexA);
